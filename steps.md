@@ -1,6 +1,6 @@
 # General 
 
-start with raspbian lite, boot it up so that the resize partition thing happens. then shutdown and create another primary partition with ext4 (give about 4 GB to each) using gparted from another machine.
+start with raspbian lite, boot it up so that the resize partition thing happens (tried to disable this but ran into trouble). then shutdown and create another primary partition with ext4 (give about 4 GB to each) using gparted or whatever from another machine.
 
 then boot and run raspi-config
 
@@ -47,13 +47,13 @@ install git
 
 configure
 
-    git config --global user.email "owenosborn@gmail.com"
-    git config --global user.name "Owen Osborn"
+    git config --global user.email "..."
+    git config --global user.name "..."
     
 pull down this repo
 
-    git clone https://github.com/owenosborn/Organelle_CM3.git
-    cd Organelle_CM3
+    git clone https://github.com/owenosborn/Organelle_M_rootfs.git
+    cd Organelle_M_rootfs
 
 # setup WM8731 audio driver with SPI control
 
@@ -64,7 +64,7 @@ update kernel
 
 fix audio driver for spi (replace 4.19.42 with whatever kernel version running)
  
-    cd audio
+    cd ~/Organelle_M_rootfs/audio
     ./fixit /lib/modules/4.19.42-v7+/kernel/sound/soc/bcm/snd-soc-audioinjector-pi-soundcard.ko
 
 compile new dt overlay for spi
