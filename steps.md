@@ -93,9 +93,6 @@ add these:
     dtoverlay=midi-uart0 
     dtoverlay=pi3-act-led,gpio=24,activelow=on
     gpu_mem=64
-    
-    
-
 
 # install packages 
     
@@ -134,14 +131,17 @@ enable vnc in raspi-config (this will download software)
 
 # config
 
-    gtk-theme-switch2 /usr/share/themes/Adwaita
     systemctl disable hciuart.service
     systemctl disable vncserver-x11-serviced.service
     systemctl disable dnsmasq.service
     systemctl disable hostapd.service
     systemctl disable dhcpcd.service
     systemctl disable wpa_supplicant.service
-    
+
+after startx run
+
+    gtk-theme-switch2 /usr/share/themes/Adwaita
+
 unmute hifi out in alsamixer to enable audio out
 enable mic boost
 enable line in 
@@ -193,5 +193,39 @@ then
     
     systemctl daemon-reload
 
+# make it read only
+
+clean up
+
+    apt-get autoremove --purge
     
+add to /boot/cmdline.txt
+
+    fastboot noswap ro
+
+move /var/spool to /tmp
+    
+    rm -rf /var/spool
+    ln -s /tmp /var/spool
+
+in /etc/ssh/sshd_config
+
+    UsePrivilegeSeparation no
+
+in /usr/lib/tmpfiles.d/var.conf replace "spool 0755" with "spool 1777"
+
+move dhcpd.resolv.conf to tmpfs
+    
+    touch /tmp/dhcpcd.resolv.conf
+    rm /etc/resolv.conf
+    ln -s /tmp/dhcpcd.resolv.conf /etc/resolv.conf
+    
+in /etc/fstab add "ro" to /boot and /, then add:
+
+    tmpfs /var/log tmpfs nodev,nosuid 0 0
+    tmpfs /var/tmp tmpfs nodev,nosuid 0 0
+    tmpfs /tmp     tmpfs nodev,nosuid 0 0
+    
+reboot
+
 
