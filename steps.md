@@ -183,7 +183,7 @@ enable rt.  in /etc/security/limits.conf add to end:
     @music   –  memlock    unlimited
     @music   –  nice      -10
     
-fiddle with pcmanfm till it works... seriously wtf.  in preferences uncheck 'Display simplified user interface.." under Layout.  uncheck everything under auto mount in Volume Management. change home to /sdcard under Advanced.  some of this stuff gets put in config file, but others get stored who knows where...
+fiddle with pcmanfm till it works. some of this stuff gets put in config file, but others get stored who knows where.  in preferences uncheck "Display simplified user interface.." in Layout.  uncheck everything under auto mount in Volume Management. change home to /sdcard under Advanced.  uncheck "Add deleted files to wastebasket" in General
 
 in /etc/systemd/system.conf add:
 
