@@ -178,7 +178,6 @@ reboot and change owner
     
 enable rt.  in /etc/security/limits.conf add to end:
 
-    ### realtime permission for jackd
     @music   –  rtprio     99
     @music   –  memlock    unlimited
     @music   –  nice      -10
