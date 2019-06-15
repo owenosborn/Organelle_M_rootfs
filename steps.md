@@ -8,6 +8,7 @@ then boot and run raspi-config
 * change hostname 
 * disable wait for network on boot
 * change wifi location to US
+* change timezone
 * enter wifi ssid 
 * under interfacing disable serial console, enable port 
 * enable ssh
