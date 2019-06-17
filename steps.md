@@ -195,6 +195,8 @@ clean up
 add to /boot/cmdline.txt
 
     fastboot noswap ro
+ 
+remove fsck.repair=yes, add fsck.mode=skip
 
 move /var/spool to /tmp
     
