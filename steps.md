@@ -109,13 +109,6 @@ install wiringpi
     git clone git://git.drogon.net/wiringPi
     cd ~/wiringPi
     sudo ./build
-
-install ttymidi
-   
-    git clone https://github.com/owenosborn/ttymidi.git
-    cd ttymidi
-    make
-    make install
     
 install pd 0.49
 
