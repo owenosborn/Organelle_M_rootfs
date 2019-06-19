@@ -227,4 +227,12 @@ stop time sync cause it is not working anyway.  (also causes issues with LINK wh
     
 reboot
 
+# release
+
+    pull latest Organelle_OS and deploy
+    remove .viminfo
+	remove git config
+    clear command history
+    run fsck
+    reboot and test
 
