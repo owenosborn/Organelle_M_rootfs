@@ -221,6 +221,10 @@ in /etc/fstab add "ro" to /boot and /, then add:
     tmpfs /var/tmp tmpfs nodev,nosuid 0 0
     tmpfs /tmp     tmpfs nodev,nosuid 0 0
     
+stop time sync cause it is not working anyway.  (also causes issues with LINK when the clock changes abruptly). need solution
+
+    timedatectl set-ntp false
+    
 reboot
 
 
