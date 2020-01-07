@@ -2,9 +2,9 @@ Steps to prepare OGM disk image for what C&G will call OS v4.0
 
 Start with OS v3.2, http://thepeacetreaty.org/organellem/images/
 
-Then...
+hmmm first fix date time, Then...
 
-hmmm first fix date time
+
 
     cd 
     sudo fw_dir/scripts/remount-rw.sh 
