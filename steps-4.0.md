@@ -47,10 +47,13 @@ fix sort order.  enable en_US.UTF8 in /etc/locale.gen, then
    
 # release
         
-    remove .viminfo
-    remove git config
-    clear command history
-    run fsck
-    reboot and test
+remove .viminfo
+remove git config
+clear command history:
+
+    cat /dev/null > ~/.bash_history && history -c && exit
+
+run fsck
+reboot and test
     
     
