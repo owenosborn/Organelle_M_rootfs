@@ -5,6 +5,7 @@ Start with OS v3.2, http://thepeacetreaty.org/organellem/images/
 Then...
 
 # update Organelle OS
+    
     cd 
     sudo fw_dir/scripts/remount-rw.sh 
     sudo timedatectl set-time "2020-01-08 16:33"
@@ -33,3 +34,23 @@ fix circle icon not showing up in Pd (tcl/tk doesn't like the adwaita circle ico
 fix sort order.  enable en_US.UTF8 in /etc/locale.gen, then 
 
     sudo locale-gen
+
+# update patches
+        
+    cd /sdcard/
+    rm -fr Patches/
+    git clone https://github.com/critterandguitari/Organelle_Patches.git
+    mv Organelle_Patches/ Patches/
+    rm -fr Patches/.git
+    rm -fr Patches/.gitignore 
+    rm -fr Patches/README.md 
+   
+# release
+        
+    remove .viminfo
+    remove git config
+    clear command history
+    run fsck
+    reboot and test
+    
+    
