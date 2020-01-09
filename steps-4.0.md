@@ -4,7 +4,7 @@ Start with OS v3.2, http://thepeacetreaty.org/organellem/images/
 
 Then...
 
-# Update Organelle OS
+# update Organelle OS
     cd 
     sudo fw_dir/scripts/remount-rw.sh 
     sudo timedatectl set-time "2020-01-08 16:33"
@@ -12,15 +12,24 @@ Then...
     git pull
     sudo make organelle_m_deploy
     
-# Install Software
+# install software
 
     sudo apt-get update
     sudo apt-get install luarocks
     sudo apt-get install csound
     sudo apt-get install supercollider
     
-# Config
+nodejs
+
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    
+# config
 
 fix circle icon not showing up in Pd (tcl/tk doesn't like the adwaita circle icon for some reason, so just rename it to force fallback)
 
     sudo mv /usr/share/icons/Adwaita/cursors/circle /usr/share/icons/Adwaita/cursors/circleORIG
+
+fix sort order.  enable en_US.UTF8 in /etc/locale.gen, then 
+
+    sudo locale-gen
