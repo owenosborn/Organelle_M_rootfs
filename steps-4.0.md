@@ -46,7 +46,9 @@ fix sort order.  enable en_US.UTF8 in /etc/locale.gen, then
     rm -fr Patches/README.md 
    
 # release
-        
+         
+check for default ap.txt and wifi.txt
+check Patches folder
 remove .viminfo
 remove git config
 clear command history:
