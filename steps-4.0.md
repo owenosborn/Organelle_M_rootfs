@@ -49,7 +49,9 @@ fix sort order.  enable en_US.UTF8 in /etc/locale.gen, then
          
 check for default ap.txt and wifi.txt
 
-check Patches folder
+check Patches folder looks good
+
+clean up /sdcard
 
 remove .viminfo
 
