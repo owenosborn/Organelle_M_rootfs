@@ -15,6 +15,10 @@ Then...
     sudo make organelle_m_deploy
     sudo systemctl daemon-reload
     
+# symlink for old scripts location
+    sudo ln -s /home/music/fw_dir/scripts /root/scripts
+    ln -s /home/music/fw_dir/scripts /home/music/scripts
+    
 and restart
     
 # install software
