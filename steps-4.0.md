@@ -13,6 +13,9 @@ Then...
     git pull
     sudo make clean
     sudo make organelle_m_deploy
+    sudo systemctl daemon-reload
+    
+and restart
     
 # install software
 
