@@ -45,6 +45,9 @@ fix sort order.  enable en_US.UTF8 in /etc/locale.gen, then
     rm -fr Patches/.git
     rm -fr Patches/.gitignore 
     rm -fr Patches/README.md 
+    git clone https://github.com/critterandguitari/Organelle_Test_Patches.git
+    mv Organelle_Test_Patches/Test\ M Patches/Utilities/
+    rm -fr Organelle_Test_Patches/
    
 # release
          
