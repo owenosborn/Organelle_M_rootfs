@@ -11,7 +11,7 @@ Then...
     sudo timedatectl set-time "2020-01-08 16:33"
     cd Organelle_OS/
     git pull
-    make clean
+    sudo make clean
     sudo make organelle_m_deploy
     
 # install software
