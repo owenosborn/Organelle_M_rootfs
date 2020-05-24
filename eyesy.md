@@ -112,16 +112,8 @@ cherrypy, try running it again if you get an error
 # config
 
     systemctl disable hciuart.service
-    systemctl disable vncserver-x11-serviced.service
     systemctl disable dnsmasq.service
     systemctl disable hostapd.service
-    systemctl disable dhcpcd.service
-    systemctl disable wpa_supplicant.service
-
-unmute hifi out in alsamixer to enable audio out
-enable mic boost
-enable line in 
-enable mic in
 
 make stuff in /root readable 
 
