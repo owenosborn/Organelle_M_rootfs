@@ -108,6 +108,44 @@ cherrypy, try running it again if you get an error
 
     pip2 install jaraco.functools==2.0
     pip2 install cherrypy==11.0.0
+    
+## openFrameworks
+
+for compiling, keep gpu memory small (64), then increase after done
+
+    wget https://openframeworks.cc/versions/v0.11.0/of_v0.11.0_linuxarmv6l_release.tar.gz
+    mkdir openFrameworks && sudo tar vxfz of_v0.11.0_linuxarmv6l_release.tar.gz -C openFrameworks --strip-components 1
+    rm of_v0.11.0_linuxarmv6l_release.tar.gz 
+    chown -R music:music openFrameworks
+    cd openFrameworks/scripts/linux/debian
+    sudo ./install_dependencies.sh && sudo ./install_codecs.sh && sudo apt-get clean
+    
+    vim openframeworks/libs/openFrameworksCompiled/project/linuxarmv6l/config.linuxarmv6l.default.mk
+
+comment out this:   
+    
+    USE_PI_LEGACY = 0
+    
+compile 
+
+    cd && sudo make Release -C openFrameworks/libs/openFrameworksCompiled/project
+    
+then increase gpu memory to 256 and try this
+
+    cd /openFrameworks/examples/3d/quaternionLatLongExample/src/
+    
+change res in main.cpp
+    
+    ofSetupOpenGL(800,480, OF_FULLSCREEN);  
+    
+add flag to config.make
+
+    PROJECT_LDFLAGS += -latomic 
+    
+then 
+
+    make
+    make run
 
 # config
 
