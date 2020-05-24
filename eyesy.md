@@ -118,10 +118,6 @@ cherrypy, try running it again if you get an error
     systemctl disable dhcpcd.service
     systemctl disable wpa_supplicant.service
 
-after startx run
-
-    gtk-theme-switch2 /usr/share/themes/Adwaita
-
 unmute hifi out in alsamixer to enable audio out
 enable mic boost
 enable line in 
