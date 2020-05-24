@@ -103,25 +103,10 @@ python stuff
 
     pip2 install Cython
     pip2 install pyliblo
-    
-install wiringpi
-
-    git clone git://git.drogon.net/wiringPi
-    cd ~/wiringPi
-    sudo ./build
-    
-install pd 0.49
-
-    wget -q -O - https://blokas.io/gpg.public.key | sudo apt-key add -
-    sudo wget -q -O /etc/apt/sources.list.d/blokas.list https://blokas.io/blokas.list
-    sudo apt-get update
-    sudo apt-get install puredata-core=0.49.0-3
 
 cherrypy, try running it again if you get an error
 
     pip2 install cherrypy==11.0.0
-    
-enable vnc in raspi-config (this will download software)
 
 # config
 
