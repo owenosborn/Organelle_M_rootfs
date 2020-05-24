@@ -106,6 +106,7 @@ python stuff
 
 cherrypy, try running it again if you get an error
 
+    pip2 install jaraco.functools==2.0
     pip2 install cherrypy==11.0.0
 
 # config
