@@ -66,7 +66,7 @@ update kernel
 fix audio driver for spi (replace 4.19.42 with whatever kernel version running)
  
     cd ~/Organelle_M_rootfs/audio
-    ./fixit /lib/modules/4.19.42-v7+/kernel/sound/soc/bcm/snd-soc-audioinjector-pi-soundcard.ko
+    sudo ./fixit.sh /lib/modules/4.19.42-v7+/kernel/sound/soc/bcm/snd-soc-audioinjector-pi-soundcard.ko
 
 compile new dt overlay for spi
 
