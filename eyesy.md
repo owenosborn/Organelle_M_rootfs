@@ -40,7 +40,7 @@ change group name
 
     groupmod --new-name music pi
     
-reboot, then raspi-config and enable auto login, reboot
+reboot
 
 install git
 
