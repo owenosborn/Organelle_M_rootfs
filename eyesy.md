@@ -109,6 +109,18 @@ cherrypy, try running it again if you get an error
     pip2 install jaraco.functools==2.0
     pip2 install cherrypy==11.0.0
     
+node js
+
+    cd 
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    
+install modules (might move these to the EYESY_OS repo), for now install 
+    
+    cd ~/EYESY_OS/web/node
+    npm install websocket
+    npm install tail
+    
 ## openFrameworks
 
 for compiling, set gpu memory small (64), then increase after done
@@ -124,7 +136,7 @@ fix thing for headless operation:
  
     vim openframeworks/libs/openFrameworksCompiled/project/linuxarmv6l/config.linuxarmv6l.default.mk
 
-comment out this:   
+comment out this line:   
     
     USE_PI_LEGACY = 0
     
