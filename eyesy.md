@@ -200,6 +200,10 @@ reboot and change owner
 
     chown music:music /sdcard 
     
+remove this if it got added along the way
+
+    sudo rm -fr /sdcard/lost+found/
+    
 enable rt.  in /etc/security/limits.conf add to end:
 
     @music - rtprio 99
