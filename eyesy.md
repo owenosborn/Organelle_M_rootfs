@@ -111,7 +111,7 @@ cherrypy, try running it again if you get an error
     
 ## openFrameworks
 
-for compiling, keep gpu memory small (64), then increase after done
+for compiling, set gpu memory small (64), then increase after done
 
     wget https://openframeworks.cc/versions/v0.11.0/of_v0.11.0_linuxarmv6l_release.tar.gz
     mkdir openFrameworks && sudo tar vxfz of_v0.11.0_linuxarmv6l_release.tar.gz -C openFrameworks --strip-components 1
@@ -120,6 +120,8 @@ for compiling, keep gpu memory small (64), then increase after done
     cd openFrameworks/scripts/linux/debian
     sudo ./install_dependencies.sh && sudo ./install_codecs.sh && sudo apt-get clean
     
+fix thing for headless operation:
+ 
     vim openframeworks/libs/openFrameworksCompiled/project/linuxarmv6l/config.linuxarmv6l.default.mk
 
 comment out this:   
@@ -130,22 +132,27 @@ compile
 
     cd && sudo make Release -C openFrameworks/libs/openFrameworksCompiled/project
     
-then increase gpu memory to 256 and try this
-
-    cd /openFrameworks/examples/3d/quaternionLatLongExample/src/
+then increase gpu memory to 256 
     
-change res in main.cpp
-    
-    ofSetupOpenGL(800,480, OF_FULLSCREEN);  
-    
-add flag to config.make
+add flag to project config.make
 
     PROJECT_LDFLAGS += -latomic 
     
-then 
+## ofxLua
 
+    sudo apt-get install luajit-5.1
+    cd openframeworks/addons/
+    git clone git://github.com/danomatika/ofxLua.git
+    cd ofxLua
+    git submodule init
+    git submodule update
+    
+try it 
+
+    cd luaExample
+    cp ../../../examples/graphics/graphicsExample/Makefile ./
+    cp ../../../examples/graphics/graphicsExample/config.make ./
     make
-    make run
 
 # config
 
