@@ -132,8 +132,6 @@ compile
 
     cd && sudo make Release -C openFrameworks/libs/openFrameworksCompiled/project
     
-then increase gpu memory to 256 
-    
 add flag to project config.make
 
     PROJECT_LDFLAGS += -latomic 
@@ -153,6 +151,8 @@ try it
     cp ../../../examples/graphics/graphicsExample/Makefile ./
     cp ../../../examples/graphics/graphicsExample/config.make ./
     make
+    
+then increase gpu memory to 256 
 
 # config
 
