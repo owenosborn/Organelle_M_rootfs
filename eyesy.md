@@ -216,23 +216,17 @@ compile
     git submodule update
     sudo apt-get install swig
     scripts/generate_bindings.sh
-    
-build example 
-
-    cd luaExample
-    cp ../../../examples/graphics/graphicsExample/Makefile ./   
-    make
-    
-then increase gpu memory to 256, reboot
 
 ## eyesy-oflua
 
     cd
-    cd openFramewors/apps/myApps
+    cd openFrameworks/apps/myApps/
     git clone https://github.com/owenosborn/ofEYESY.git
     mv ofEYESY eyesy
     cd eyesy
     make
+
+then increase gpu memory to 256, reboot
 
 # make it read only
 
