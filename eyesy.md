@@ -93,7 +93,7 @@ reboot
 
 # install packages 
     
-    sudo apt-get install zip jwm xinit x11-utils x11-xserver-utils lxterminal pcmanfm adwaita-icon-theme gnome-themes-standard gtk-theme-switch conky libasound2-dev liblo-dev liblo-tools python-pip mpg123 dnsmasq hostapd puredata wiringpi cython python-liblo python-cherrypy3
+    sudo apt-get install zip jwm xinit x11-utils x11-xserver-utils lxterminal pcmanfm adwaita-icon-theme gnome-themes-standard gtk-theme-switch conky libasound2-dev liblo-dev liblo-tools python-pip mpg123 dnsmasq hostapd puredata wiringpi cython python-liblo python-cherrypy3 swig python-pygame python-psutil python-alsaaudio
    
 # config
 
@@ -205,7 +205,6 @@ compile
     cd ofxLua
     git submodule init
     git submodule update
-    sudo apt-get install swig
     scripts/generate_bindings.sh
 
 ## eyesy-oflua
@@ -218,10 +217,6 @@ compile
     make
 
 then increase gpu memory to 256, reboot
-
-## eyesy-pygame
-
-    sudo apt-get install python-pygame python-psutil python-alsaaudio
 
 # make it read only
 
