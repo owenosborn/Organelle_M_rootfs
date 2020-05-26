@@ -156,8 +156,8 @@ reboot
 
 ## python stuff 
 
-    pip2 install Cython
-    pip2 install pyliblo
+    sudo apt-get install cython
+    sudo apt-get install python-liblo
 
 best way to get cherrypy
 
