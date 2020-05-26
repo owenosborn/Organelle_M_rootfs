@@ -93,7 +93,7 @@ reboot
 
 # install packages 
     
-    sudo apt-get install zip jwm xinit x11-utils x11-xserver-utils lxterminal pcmanfm adwaita-icon-theme gnome-themes-standard gtk-theme-switch conky libasound2-dev liblo-dev liblo-tools python-pip mpg123 dnsmasq hostapd puredata wiringpi
+    sudo apt-get install zip jwm xinit x11-utils x11-xserver-utils lxterminal pcmanfm adwaita-icon-theme gnome-themes-standard gtk-theme-switch conky libasound2-dev liblo-dev liblo-tools python-pip mpg123 dnsmasq hostapd puredata wiringpi cython python-liblo python-cherrypy3
    
 # config
 
@@ -153,15 +153,6 @@ then
 reboot
 
 # install other software
-
-## python stuff 
-
-    sudo apt-get install cython
-    sudo apt-get install python-liblo
-
-best way to get cherrypy
-
-    sudo apt-get install python-cherrypy3
     
 ## EYESY_OS
 
