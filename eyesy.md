@@ -228,6 +228,10 @@ compile
 
 then increase gpu memory to 256, reboot
 
+## eyesy-pygame
+
+    sudo apt-get install python-pygame python-psutil python-alsaaudio
+
 # make it read only
 
 clean up
