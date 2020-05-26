@@ -20,7 +20,7 @@ install vim
 
 change keyboard:
 
-    vim /etc/default/keyboard 
+    sudo vim /etc/default/keyboard 
 
 change gb to us, reboot
 
@@ -44,7 +44,7 @@ reboot
 
 install git
 
-    apt-get install git
+    sudo apt-get install git
 
 configure
 
@@ -65,7 +65,7 @@ fix audio driver for spi (replace 4.19.42 with whatever kernel version running)
 
 compile new dt overlay for spi
 
-    cp audioinjector-wm8731-audio-spi-overlay.dts /boot
+    sudo cp audioinjector-wm8731-audio-spi-overlay.dts /boot
     sudo dtc -@ -I dts -O dtb -o /boot/overlays/wm8731-spi.dtbo /boot/audioinjector-wm8731-audio-spi-overlay.dts
 
 # config.txt
@@ -77,7 +77,6 @@ comment:
 uncomment:
 
     disable_overscan=1
-    hdmi_force_hotplug=1
     dtparam=i2c_arm=on
     dtparam=spi=on
     
@@ -94,25 +93,25 @@ reboot
 
 # install packages 
     
-    apt-get install zip jwm xinit x11-utils x11-xserver-utils lxterminal pcmanfm adwaita-icon-theme gnome-themes-standard gtk-theme-switch conky libasound2-dev liblo-dev liblo-tools python-pip mpg123 dnsmasq hostapd puredata wiringpi
+    sudo apt-get install zip jwm xinit x11-utils x11-xserver-utils lxterminal pcmanfm adwaita-icon-theme gnome-themes-standard gtk-theme-switch conky libasound2-dev liblo-dev liblo-tools python-pip mpg123 dnsmasq hostapd puredata wiringpi
    
 # config
 
-    systemctl disable hciuart.service
-    systemctl disable dnsmasq.service
-    systemctl disable hostapd.service
+    sudo systemctl disable hciuart.service
+    sudo systemctl disable dnsmasq.service
+    sudo systemctl disable hostapd.service
 
 make stuff in /root readable 
 
-    chmod +xr /root
+    sudo chmod +xr /root
     
 make sdcard and usb directories
     
-    mkdir /sdcard
-    chown music:music /sdcard
+    sudo mkdir /sdcard
+    sudo chown music:music /sdcard
     
-    mkdir /usbdrive
-    chown music:music /usbdrive
+    sudo mkdir /usbdrive
+    sudo chown music:music /usbdrive
 
 allow sudo with no password
 
@@ -128,7 +127,7 @@ add this to /etc/fstab to mount the patches partition:
    
 reboot and change owner
 
-    chown music:music /sdcard 
+    sudo chown music:music /sdcard 
     
 remove this if it got added along the way
 
@@ -149,7 +148,7 @@ in /etc/systemd/system.conf add:
 
 then 
     
-    systemctl daemon-reload
+    sudo systemctl daemon-reload
 
 reboot
 
