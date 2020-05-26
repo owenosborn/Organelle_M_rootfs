@@ -159,9 +159,9 @@ reboot
     pip2 install Cython
     pip2 install pyliblo
 
-cherrypy, try running it again if you get an error
+best way to get cherrypy
 
-    sudo apt-get install cherrypy
+    sudo apt-get install python-cherrypy3
     
 ## EYESY_OS
 
