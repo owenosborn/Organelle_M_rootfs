@@ -261,9 +261,9 @@ reboot
 
 # release
 
-    pull latest Organelle_OS and deploy
+    clean out home folder
     remove .viminfo
-	remove git config
+    remove git config
     clear command history
     run fsck
     reboot and test
