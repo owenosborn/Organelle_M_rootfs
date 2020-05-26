@@ -15,8 +15,8 @@ then boot and run raspi-config
 
 install vim
 
-    apt-get update 
-    apt-get install vim 
+    sudo apt-get update 
+    sudo apt-get install vim 
 
 change keyboard:
 
@@ -58,11 +58,6 @@ pull down this repo
 
 # setup WM8731 audio driver with SPI control
 
-update kernel
- 
-    rpi-update 
-    reboot 
-
 fix audio driver for spi (replace 4.19.42 with whatever kernel version running)
  
     cd ~/Organelle_M_rootfs/audio
@@ -95,11 +90,72 @@ add these:
     dtoverlay=pi3-act-led,gpio=24,activelow=on
     gpu_mem=64
 
+reboot
+
 # install packages 
     
     apt-get install zip jwm xinit x11-utils x11-xserver-utils lxterminal pcmanfm adwaita-icon-theme gnome-themes-standard gtk-theme-switch conky libasound2-dev liblo-dev liblo-tools python-pip mpg123 dnsmasq hostapd puredata wiringpi
+   
+# config
+
+    systemctl disable hciuart.service
+    systemctl disable dnsmasq.service
+    systemctl disable hostapd.service
+
+make stuff in /root readable 
+
+    chmod +xr /root
     
-python stuff 
+make sdcard and usb directories
+    
+    mkdir /sdcard
+    chown music:music /sdcard
+    
+    mkdir /usbdrive
+    chown music:music /usbdrive
+
+allow sudo with no password
+
+    sudo visudo
+
+add this to end of file
+
+    music ALL=(ALL) NOPASSWD: ALL
+    
+add this to /etc/fstab to mount the patches partition:
+
+    /dev/mmcblk0p3 /sdcard  ext4 defaults,noatime 0 0
+   
+reboot and change owner
+
+    chown music:music /sdcard 
+    
+remove this if it got added along the way
+
+    sudo rm -fr /sdcard/lost+found/
+    
+enable rt.  in /etc/security/limits.conf add to end:
+
+    @music - rtprio 99
+    @music - memlock unlimited
+    @music - nice -10
+    
+fiddle with pcmanfm till it works. some of this stuff gets put in config file, but others get stored who knows where.  in preferences uncheck "Display simplified user interface.." in Layout.  uncheck everything under auto mount in Volume Management. change home to /sdcard under Advanced.  uncheck "Add deleted files to wastebasket" in General
+
+in /etc/systemd/system.conf add:
+
+    DefaultTimeoutStartSec=10s
+    DefaultTimeoutStopSec=5s
+
+then 
+    
+    systemctl daemon-reload
+
+reboot
+
+# install other software
+
+## python stuff 
 
     pip2 install Cython
     pip2 install pyliblo
@@ -109,7 +165,7 @@ cherrypy, try running it again if you get an error
     pip2 install jaraco.functools==2.0
     pip2 install cherrypy==11.0.0
     
-node js
+## node js
 
     cd 
     curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
@@ -166,60 +222,6 @@ try it
     
 then increase gpu memory to 256 
 
-# config
-
-    systemctl disable hciuart.service
-    systemctl disable dnsmasq.service
-    systemctl disable hostapd.service
-
-make stuff in /root readable 
-
-    chmod +xr /root
-    
-make sdcard and usb directories
-    
-    mkdir /sdcard
-    chown music:music /sdcard
-    
-    mkdir /usbdrive
-    chown music:music /usbdrive
-
-allow sudo with no password
-
-    sudo visudo
-
-add this to end of file
-
-    music ALL=(ALL) NOPASSWD: ALL
-    
-add this to /etc/fstab to mount the patches partition:
-
-    /dev/mmcblk0p3 /sdcard  ext4 defaults,noatime 0 0
-   
-reboot and change owner
-
-    chown music:music /sdcard 
-    
-remove this if it got added along the way
-
-    sudo rm -fr /sdcard/lost+found/
-    
-enable rt.  in /etc/security/limits.conf add to end:
-
-    @music - rtprio 99
-    @music - memlock unlimited
-    @music - nice -10
-    
-fiddle with pcmanfm till it works. some of this stuff gets put in config file, but others get stored who knows where.  in preferences uncheck "Display simplified user interface.." in Layout.  uncheck everything under auto mount in Volume Management. change home to /sdcard under Advanced.  uncheck "Add deleted files to wastebasket" in General
-
-in /etc/systemd/system.conf add:
-
-    DefaultTimeoutStartSec=10s
-    DefaultTimeoutStopSec=5s
-
-then 
-    
-    systemctl daemon-reload
 
 # make it read only
 
