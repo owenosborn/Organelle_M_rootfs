@@ -161,9 +161,13 @@ reboot
 
 cherrypy, try running it again if you get an error
 
-    pip2 install jaraco.functools==2.0
-    pip2 install cherrypy==11.0.0
+    sudo apt-get install cherrypy
     
+## EYESY_OS
+
+    cd
+    git clone https://github.com/critterandguitari/EYESY_OS.git
+
 ## node js
 
     cd 
@@ -180,16 +184,18 @@ install modules (might move these to the EYESY_OS repo), for now install
 
 for compiling, set gpu memory small (64), then increase after done
 
+    cd
     wget https://openframeworks.cc/versions/v0.11.0/of_v0.11.0_linuxarmv6l_release.tar.gz
     mkdir openFrameworks && sudo tar vxfz of_v0.11.0_linuxarmv6l_release.tar.gz -C openFrameworks --strip-components 1
     rm of_v0.11.0_linuxarmv6l_release.tar.gz 
-    chown -R music:music openFrameworks
+    sudo chown -R music:music openFrameworks
     cd openFrameworks/scripts/linux/debian
     sudo ./install_dependencies.sh && sudo ./install_codecs.sh && sudo apt-get clean
     
 fix thing for headless operation:
  
-    vim openframeworks/libs/openFrameworksCompiled/project/linuxarmv6l/config.linuxarmv6l.default.mk
+    cd
+    vim openFrameworks/libs/openFrameworksCompiled/project/linuxarmv6l/config.linuxarmv6l.default.mk
 
 comment out this line:   
     
@@ -199,28 +205,34 @@ compile
 
     cd && sudo make Release -C openFrameworks/libs/openFrameworksCompiled/project
     
-add flag to project config.make
-
-    PROJECT_LDFLAGS += -latomic 
-    
 ## ofxLua
 
+    cd
     sudo apt-get install luajit-5.1
-    cd openframeworks/addons/
+    cd openFrameworks/addons/
     git clone git://github.com/danomatika/ofxLua.git
     cd ofxLua
     git submodule init
     git submodule update
+    sudo apt-get install swig
+    scripts/generate_bindings.sh
     
-try it 
+build example 
 
     cd luaExample
-    cp ../../../examples/graphics/graphicsExample/Makefile ./
-    cp ../../../examples/graphics/graphicsExample/config.make ./
+    cp ../../../examples/graphics/graphicsExample/Makefile ./   
     make
     
-then increase gpu memory to 256 
+then increase gpu memory to 256, reboot
 
+## eyesy-oflua
+
+    cd
+    cd openFramewors/apps/myApps
+    git clone https://github.com/owenosborn/ofEYESY.git
+    mv ofEYESY eyesy
+    cd eyesy
+    make
 
 # make it read only
 
