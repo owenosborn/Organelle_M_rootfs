@@ -100,6 +100,8 @@ reboot
     sudo systemctl disable hciuart.service
     sudo systemctl disable dnsmasq.service
     sudo systemctl disable hostapd.service
+    sudo systemctl disable wpa_supplicant
+    sudo systemctl disable dhcpcd
 
 make stuff in /root readable 
 
