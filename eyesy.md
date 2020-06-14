@@ -156,6 +156,8 @@ reboot
 
 # install other software
     
+abl_link~ object from deken 
+   
 ## EYESY_OS
 
     cd
