@@ -73,6 +73,7 @@ compile new dt overlay for spi
 comment:
 
     #dtparam=audio=on
+    #hdmi_force_hotplug=1
 
 uncomment:
 
