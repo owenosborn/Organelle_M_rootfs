@@ -280,12 +280,20 @@ reboot
 # release
 
 clean out home folder
+
 remove wifi config (change to music, coolmusic)
+
 set shift params to default
+
 remove .viminfo
+
 remove git config
+
 clear command history:
-cat /dev/null > ~/.bash_history && history -c && exit
+
+    cat /dev/null > ~/.bash_history && history -c && exit
+    
 run fsck
+
 reboot and test
 
