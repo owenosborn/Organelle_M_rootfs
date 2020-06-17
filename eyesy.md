@@ -147,9 +147,22 @@ in /etc/systemd/system.conf add:
 
     DefaultTimeoutStartSec=10s
     DefaultTimeoutStopSec=5s
+    
+boot stuff.  cmdline.txt should look like this:
+
+    dwc_otg.lpm_enable=0 root=PARTUUID=9d5fbf22-02 console=tty3 rootfstype=ext4 elevator=deadline fsck.mode=skip rootwait noswap fastboot loglevel=0 logo.nologo vt.global_cursor_default=0
+
+for faster booting
+
+    sudo systemctl disable raspi-config.service
+    sudo systemctl disable triggerhappy.service
+    
+remove plymouth all together (splash screen provided by EYESY_OS)
+
+    sudo apt-get purge --remove plymouth
 
 then 
-    
+
     sudo systemctl daemon-reload
 
 reboot
