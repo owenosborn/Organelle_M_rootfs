@@ -239,11 +239,11 @@ then increase gpu memory to 256, reboot
 
 clean up
 
-    apt-get autoremove --purge
+    sudo apt-get autoremove --purge
     
 add to /boot/cmdline.txt
 
-    fastboot noswap ro
+    ro
  
 remove fsck.repair=yes, add fsck.mode=skip
 
@@ -260,9 +260,9 @@ in /usr/lib/tmpfiles.d/var.conf replace "spool 0755" with "spool 1777"
 
 move dhcpd.resolv.conf to tmpfs
     
-    touch /tmp/dhcpcd.resolv.conf
-    rm /etc/resolv.conf
-    ln -s /tmp/dhcpcd.resolv.conf /etc/resolv.conf
+    sudo touch /tmp/dhcpcd.resolv.conf
+    sudo rm /etc/resolv.conf
+    sudo ln -s /tmp/dhcpcd.resolv.conf /etc/resolv.conf
     
 in /etc/fstab add "ro" to /boot and /, then add:
 
