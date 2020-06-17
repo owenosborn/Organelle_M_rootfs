@@ -280,7 +280,8 @@ reboot
 # release
 
 clean out home folder
-remove wifi config
+remove wifi config (change to music, coolmusic)
+set shift params to default
 remove .viminfo
 remove git config
 clear command history:
