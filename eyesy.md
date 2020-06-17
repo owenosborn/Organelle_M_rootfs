@@ -285,6 +285,8 @@ remove wifi config (change to music, coolmusic)
 
 set shift params to default
 
+remove files in Grabs
+
 remove .viminfo
 
 remove git config
