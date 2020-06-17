@@ -279,10 +279,12 @@ reboot
 
 # release
 
-    clean out home folder
-    remove .viminfo
-    remove git config
-    clear command history
-    run fsck
-    reboot and test
+clean out home folder
+remove wifi config
+remove .viminfo
+remove git config
+clear command history:
+cat /dev/null > ~/.bash_history && history -c && exit
+run fsck
+reboot and test
 
