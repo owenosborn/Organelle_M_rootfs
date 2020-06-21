@@ -295,9 +295,24 @@ clear command history:
 
     cat /dev/null > ~/.bash_history && history -c && exit
     
+    
+shutdown and on another machine 
+
 run zerofree on ext partitions
+
+    sudo zerofree -v /dev/sda2
+    sudo zerofree -v /dev/sda3
 
 run fsck
 
+    sudo fsck /dev/sda1
+    sudo fsck /dev/sda1
+    sudo fsck /dev/sda1
+
 reboot and test
+
+on another machine dd and zip it up
+
+    sudo dd if=/dev/rdisk1 of=EYESY-v2.0.img bs=1m
+    zip -db EYESY-v2.0.img.zip EYESY-v2.0.img
 
