@@ -295,6 +295,7 @@ clear command history:
 
     cat /dev/null > ~/.bash_history && history -c && exit
     
+run zerofree on ext partitions
 run fsck
 
 reboot and test
