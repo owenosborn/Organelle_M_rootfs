@@ -306,8 +306,8 @@ run zerofree on ext partitions
 run fsck
 
     sudo fsck /dev/sda1
-    sudo fsck /dev/sda1
-    sudo fsck /dev/sda1
+    sudo fsck /dev/sda2
+    sudo fsck /dev/sda3
 
 reboot and test
 
