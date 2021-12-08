@@ -239,6 +239,14 @@ install modules (might move these to the EYESY_OS repo), for now install
     npm install tail
     
 
+
+## cherrypy 
+
+try running it again if you get an error
+
+    pip2 install cherrypy==11.0.0
+
+
 # make it read only
 
 clean up
