@@ -218,7 +218,13 @@ increase swap to 1024 megs for compiling (set CONF_SWAPSIZE=1024 in /etc/dphys-s
     cd eyesy
     make
 
-then increase gpu memory to 256 in /boot/config.txt, reboot
+disable swap:
+
+    sudo systemctl disable dphys-swapfile
+
+also set CONF_SWAPSIZE=1024 in /etc/dphys-swapfile for good measure
+
+increase gpu memory to 256 in /boot/config.txt, reboot
 
 ## node js
 
