@@ -192,7 +192,8 @@ comment out this line:
     
     USE_PI_LEGACY = 0
     
-compile 
+compile
+
     cd && sudo make Release -C openFrameworks/libs/openFrameworksCompiled/project
     
 ## ofxLua
