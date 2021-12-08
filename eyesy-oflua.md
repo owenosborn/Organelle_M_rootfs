@@ -173,7 +173,7 @@ reboot
 
 ## openFrameworks
 
-for compiling, set gpu memory small (64), then increase after done
+for compiling, set gpu memory small (64) in /boot/config.txt, then increase after done
 
     cd
     wget https://openframeworks.cc/versions/v0.11.2/of_v0.11.2_linuxarmv6l_release.tar.gz
@@ -193,10 +193,11 @@ comment out this line:
     USE_PI_LEGACY = 0
     
 compile 
-
     cd && sudo make Release -C openFrameworks/libs/openFrameworksCompiled/project
     
 ## ofxLua
+
+increase swap to 1024 megs for compiling (set CONF_SWAPSIZE=1024 in /etc/dphys-swapfile), then we'll set it to 0 and disable when finished. 
 
     cd
     sudo apt-get install luajit-5.1
