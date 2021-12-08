@@ -197,7 +197,7 @@ compile
     
 ## ofxLua
 
-increase swap to 1024 megs for compiling (set CONF_SWAPSIZE=1024 in /etc/dphys-swapfile), then we'll set it to 0 and disable when finished. 
+increase swap to 1024 megs for compiling (set CONF_SWAPSIZE=1024 in /etc/dphys-swapfile and reboot), then we'll set it to 0 and disable when finished. 
 
     cd
     sudo apt-get install luajit-5.1
