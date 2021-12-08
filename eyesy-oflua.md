@@ -162,6 +162,10 @@ for faster booting
 remove plymouth all together (splash screen provided by EYESY_OS)
 
     sudo apt-get purge --remove plymouth
+    
+disable tty1
+
+    sudo systemctl disable getty@tty1.service
 
 then 
 
