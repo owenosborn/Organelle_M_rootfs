@@ -226,7 +226,7 @@ disable swap:
 
     sudo systemctl disable dphys-swapfile
 
-also set CONF_SWAPSIZE=1024 in /etc/dphys-swapfile for good measure
+also set CONF_SWAPSIZE=0 in /etc/dphys-swapfile for good measure
 
 increase gpu memory to 256 in /boot/config.txt, reboot
 
